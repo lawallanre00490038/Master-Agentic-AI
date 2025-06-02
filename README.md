@@ -39,7 +39,52 @@ This repository contains three exercises that demonstrate the use of **LangChain
 
 ### ✅ Exercise 2 – SQL + File Writing Agent
 
+This exercise demonstrates how an agent can interact with a PostgreSQL database and write query results to a file.
 - Connects to a PostgreSQL database using the environment variable `POSTGRES_URL`.
+
+- The agent connects to a PostgreSQL database using the environment variable:  
+  ```env
+  POSTGRES_URL=your_postgres_connection_string
+  ```
+
+- You can use a hosted database service like [Neon on Vercel](https://vercel.com/integrations/neon-postgres) to quickly set up a free demo database.
+
+---
+
+#### 🧱 Required Table: `users`
+
+Before running the agent, ensure your database contains a table named `users` with some sample data. You can create it with the following SQL:
+
+```sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    age INTEGER,
+    city VARCHAR(50)
+);
+```
+
+**Insert Sample Data:**
+
+```sql
+INSERT INTO users (name, email, age, city) VALUES
+('Aisha Bello', 'aisha@example.com', 28, 'Lagos'),
+('James Okoro', 'james@example.com', 35, 'Abuja'),
+('Nkechi Obi', 'nkechi@example.com', 22, 'Enugu'),
+('Chinedu Oko', 'chinedu@example.com', 30, 'Owerri'),
+('Fatima Ahmed', 'fatima@example.com', 26, 'Kano'),
+('Ibrahim Musa', 'ibrahim@example.com', 40, 'Kaduna'),
+('Blessing Udo', 'blessing@example.com', 32, 'Uyo'),
+('Tolu Adebayo', 'tolu@example.com', 27, 'Ibadan'),
+('Ngozi Chika', 'ngozi@example.com', 24, 'Asaba'),
+('Emeka Eze', 'emeka@example.com', 29, 'Onitsha');
+```
+
+---
+
+
+
 
 **Tools Used**:
 - `SQL Query Executor`: Executes SQL commands  
