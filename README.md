@@ -78,12 +78,32 @@ This repository contains three exercises that demonstrate the use of **LangChain
 git clone https://github.com/your-username/agentic-ai-exercises.git
 cd agentic-ai-exercises
 ```
+## 2. Install dependencies with UV
+#### ⚡ Installing Astral UV
+
+To install **Astral UV**, run the following command in **PowerShell**:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+> 📌 This command downloads and installs Astral UV using PowerShell by bypassing execution policy and executing the remote script.
+
+---
+
+#### 🛠 Creating a Virtual Environment with UV
+
+Follow the official documentation to create a virtual environment using UV:
+
+🔗 [Astral UV – Managing Python Environments](https://docs.astral.sh/uv/pip/environments/)
+
+
 
 ### 2. Create a virtual environment and activate it
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 -m venv .venv or uv .venv
+source venv/bin/activate   or .venv/Scripts/activate # On Windows: venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
